@@ -1,0 +1,80 @@
+
+#user  nobody;
+worker_processes  4;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+pid        logs/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $request_time  - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  logs/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  900;
+
+    gzip on;
+    gzip_min_length 1k;
+    gzip_buffers 4 16k;
+    gzip_http_version 1.0;
+    gzip_comp_level 6;
+    gzip_types text/plain application/javascript application/x-javascript text/javascript text/xml text/css;
+    gzip_disable "MSIE [1-6]\.";
+    gzip_vary on;
+
+    lua_package_path '/usr/local/nginx/conf/?.lua;;';
+    
+		add_header Access-Control-Allow-Origin *;
+		add_header Access-Control-Allow-Headers X-Requested-With;
+		add_header Access-Control-Allow-Methods GET,POST,OPTIONS;
+
+    server {
+        
+        listen 80;
+        listen prepub-app.yidiyiwei.com:80;
+        root /static_svn/; 
+        # Make site accessible from http://localhost/
+        server_name prepub-app.yidiyiwei.com;
+
+        location = / {
+                proxy_pass  http://127.0.0.1:8080/index.htm;
+        }
+
+        location ~ \.htm$ {
+                index index.htm;
+                proxy_pass http://127.0.0.1:8080;
+
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+        }
+
+        location ^~ /static/uploaded/ {
+            root /mstatic/;
+            set $image_root /mstatic/;
+            set $file "$image_root$uri";
+            if (!-f $file) {
+                rewrite_by_lua_file conf/thumbnail.lua;
+            }
+            expires 7d;
+        }
+
+    }
+
+}
