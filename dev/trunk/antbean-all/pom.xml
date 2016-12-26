@@ -93,31 +93,12 @@
 			<!-- ↑↑↑↑↑↑↑↑↑↑↑↑↑↑ DB ↑↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
 
 			<!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ jfinal与quartz整合需要的jar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
-			<!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
-			<!-- <dependency>
-				<groupId>org.quartz-scheduler</groupId>
-				<artifactId>quartz</artifactId>
-				<version>2.2.1</version>
-			</dependency> -->
 			<!-- https://mvnrepository.com/artifact/cn.dreampie/jfinal-quartz -->
 			<dependency>
 				<groupId>cn.dreampie</groupId>
 				<artifactId>jfinal-quartz</artifactId>
 				<version>0.2</version>
 			</dependency>
-			<!-- https://mvnrepository.com/artifact/cn.dreampie/jfinal-utils -->
-			<!-- <dependency> <groupId>cn.dreampie</groupId> <artifactId>jfinal-utils</artifactId> 
-				<version>0.2</version> </dependency> -->
-			<!-- https://mvnrepository.com/artifact/com.google.code.google-collections/google-collect -->
-			<!-- <dependency> <groupId>com.google.code.google-collections</groupId> 
-				<artifactId>google-collect</artifactId> <version>snapshot-20080530</version> 
-				</dependency> -->
-			<!-- https://mvnrepository.com/artifact/org.objectweb.asm/org.objectweb.asm -->
-			<!-- <dependency>
-				<groupId>org.objectweb.asm</groupId>
-				<artifactId>org.objectweb.asm</artifactId>
-				<version>3.3.1.v201105211655</version>
-			</dependency> -->
 			<!-- ↑↑↑↑↑↑↑↑↑↑↑↑↑↑ jfinal与quartz整合需要的jar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
 
 			<!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Log ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->

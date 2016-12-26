@@ -33,20 +33,10 @@
 		</dependency>
 
 		<!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ jfinal与quartz整合需要的jar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
-		<!-- <dependency> <groupId>org.quartz-scheduler</groupId> <artifactId>quartz</artifactId> 
-			</dependency> -->
 		<dependency>
 			<groupId>cn.dreampie</groupId>
 			<artifactId>jfinal-quartz</artifactId>
 		</dependency>
-		<!-- <dependency> <groupId>cn.dreampie</groupId> <artifactId>jfinal-utils</artifactId> 
-			</dependency> -->
-		<!-- <dependency> <groupId>com.google.code.google-collections</groupId> 
-			<artifactId>google-collect</artifactId> </dependency> -->
-		<!-- <dependency>
-			<groupId>org.objectweb.asm</groupId>
-			<artifactId>org.objectweb.asm</artifactId>
-		</dependency> -->
 		<!-- ↑↑↑↑↑↑↑↑↑↑↑↑↑↑ jfinal与quartz整合需要的jar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
 
 		<!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Log ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
