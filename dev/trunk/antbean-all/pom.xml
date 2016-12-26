@@ -12,7 +12,7 @@
 		<servlet.version>2.3</servlet.version>
 		<jetty.version>9.3.8.v20160314</jetty.version>
 		<jfinal.version>2.2</jfinal.version>
-	</properties>
+	</properties> 
 
 	<dependencyManagement>
 		<dependencies>
